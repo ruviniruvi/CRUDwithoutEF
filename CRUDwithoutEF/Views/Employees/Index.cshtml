@@ -1,0 +1,61 @@
+﻿@model System.Data.DataTable
+
+@{
+    ViewData["Title"] = "Employee List";
+}
+
+<div class=" jumbotron"></div>
+<h1 class=" text-center">@ViewData["Title"]</h1>
+
+
+<table class="table table-bordered">
+    <thead class="thead-light ">
+        <tr>
+            <th>
+                EMPLOYEE FIRST NAME
+            </th>
+            <th>
+               EMPLOYEE LAST NAME
+            </th>
+            <th>
+              AGE
+            </th>
+            <th>
+               POSITION
+            </th>
+            <th>
+                SALARY
+            </th>
+            <th>
+                <a asp-action="Edit">Add New Employee</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@for(int i =0; i< Model.Rows.Count; i++)
+{
+        <tr>
+            <td>
+                @Model.Rows[i]["EMPLOYEE_FIRST_NAME"]
+            </td>
+            <td>
+                @Model.Rows[i]["EMPLOYEE_LAST_NAME"]
+            </td>
+            <td>
+                @Model.Rows[i]["AGE"]
+            </td>
+            <td>
+                @Model.Rows[i]["POSITION"]
+            </td>
+            <td>
+                @Model.Rows[i]["SALARY"]
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id=" @Model.Rows[i]["EMPLOYEE_ID"]">Edit</a> |
+                
+                <a asp-action="Delete" asp-route-id="@Model.Rows[i]["EMPLOYEE_ID"]">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

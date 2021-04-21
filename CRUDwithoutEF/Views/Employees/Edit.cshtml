@@ -4,6 +4,41 @@
     ViewData["Title"] = Model.EMPLOYEE_ID==0?"Add Employee":"Update Employee";
 }
 
+<html>
+<head>
+    <style>
+        .navbar {
+            margin: inherit;
+            padding-left: initial;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+
+
+        * {
+            background-color: #FBE9DF;
+            margin: inherit;
+            padding-left: initial;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FBE9DF;
+            margin: inherit;
+            padding-left: initial;
+            box-sizing: border-box;
+        }
+
+
+    
+    </style>
+
+
+</head>
+
+
+
 <h1>@ViewData["Title"]</h1>
 
 
@@ -52,3 +87,5 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+</html>
